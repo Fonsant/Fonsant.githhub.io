@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <title>Pulseras Lisas - K'latee Joyería | Oro 18K</title>
+    <meta name="description" content="Descubre nuestra exclusiva colección de pulseras lisas de oro 18K. Diseños elegantes y atemporales con la mejor calidad. Envío gratis en Colombia.">
+</head>
+
+<body>
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="marquita.png" width="120" height="60" alt="K'latee Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" aria-controls="opciones" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+     <div class="collapse navbar-collapse" id="opciones">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pulserasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-gem"></i> Pulseras
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pulserasDropdown">
+                            <li><a class="dropdown-item" href="lisas.html"><i class="bi bi-gem"></i> Lisas</a></li>
+                            <li><a class="dropdown-item" href="diamantadas.html"><i class="bi bi-star"></i> Diamantadas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anillos.html">
+                            <i class="bi bi-circle"></i> Anillos
+                        </a>
+                    </li>
+
+                          <li class="nav-item">
+                        <a class="nav-link" href="accesorios.html">
+                            <i class="bi bi-circle"></i> Acesorios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">
+                            <i class="bi bi-envelope"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="cart-icon me-3">
+                        <a href="#" id="cart-button" class="nav-link">
+                            <i class="bi bi-cart3"></i> 
+                            <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <label for="theme" class="theme">
+                        <span class="theme__toggle-wrap">
+                            <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+                            <span class="theme__fill"></span>
+                            <span class="theme__icon">
+                                <span class="theme__icon-part"></span>
+                            </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner -->
+    <div class="barra">
+        <div class="mensaje">
+            <i class="bi bi-truck"></i> Envío gratis en toda Colombia
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-shield-check"></i> Garantía de calidad 100%
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-credit-card"></i> Pago seguro y en cuotas
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-award"></i> Oro 18K certificado
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-gem"></i> Diseños únicos y personalizados
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-star"></i> Calidad premium garantizada
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-heart"></i> Atención personalizada
+        </div>
+        <div class="mensaje">
+            <i class="bi bi-clock"></i> Entrega rápida y segura
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%), url('fondo10.jpg') center/cover; min-height: 60vh; display: flex; align-items: center; margin-top: 80px;">
+        <div class="container text-center">
+            <h1 class="titulo">Pulseras Lisas</h1>
+            <p class="lead mb-4" style="font-size: 1.25rem; color: var(--text-dark); font-weight: 500;">
+                Elegancia atemporal en oro 18K • Diseños únicos • Calidad premium
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4" style="background: var(--bg-light);">
+    <div class="container">
+            <div class="filter-section">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="filter-label">Buscar</label>
+                        <input type="text" id="searchInput" class="filter-input" placeholder="Buscar pulseras...">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="filter-label">Ordenar por</label>
+                        <select id="sortSelect" class="filter-select">
+                            <option value="">Más relevantes</option>
+                            <option value="price-low">Precio: Menor a Mayor</option>
+                            <option value="price-high">Precio: Mayor a Menor</option>
+                            <option value="name">Nombre A-Z</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="filter-label">Rango de precio</label>
+                        <select id="priceFilter" class="filter-select">
+                            <option value="">Todos los precios</option>
+                            <option value="0-500000">Hasta $500,000</option>
+                            <option value="500000-1000000">$500,000 - $1,000,000</option>
+                            <option value="1000000-2000000">$1,000,000 - $2,000,000</option>
+                            <option value="2000000-999999999">Más de $2,000,000</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="filter-label">&nbsp;</label>
+                        <button class="btn btn-light w-100" onclick="clearFilters()">
+                            <i class="bi bi-arrow-clockwise"></i> Limpiar
+                        </button>
+                    </div>
+                                </div>
+                                </div>
+                            </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="product-grid" id="productGrid">
+                <!-- Producto 1 -->
+                <div class="product-card" data-category="lisa" data-price="850000">
+                    <div class="price-badge">$850,000</div>
+                    <img src="lisa1.jpg" alt="Pulsera Lisa 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Clásica</h3>
+                        <p class="product-price">$850,000</p>
+                        <p class="product-description">Pulsera lisa de oro 18K con acabado brillante. Diseño atemporal y elegante perfecto para cualquier ocasión.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Brillante</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Clásica', 850000, 'lisa1.jpg', 'lisa1')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa1')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                                </div>
+                                </div>
+                            </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card" data-category="lisa" data-price="920000">
+                    <div class="price-badge">$920,000</div>
+                    <img src="lisa2.jpg" alt="Pulsera Lisa 2" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Elegante</h3>
+                        <p class="product-price">$920,000</p>
+                        <p class="product-description">Pulsera lisa con diseño refinado y acabado mate. Ideal para looks sofisticados y elegantes.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Mate</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Elegante', 920000, 'lisa2.jpg', 'lisa2')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa2')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                                </div>
+                                </div>
+                            </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card" data-category="lisa" data-price="780000">
+                    <div class="price-badge">$780,000</div>
+                    <img src="lisa3.jpg" alt="Pulsera Lisa 3" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Moderna</h3>
+                        <p class="product-price">$780,000</p>
+                        <p class="product-description">Pulsera lisa con diseño contemporáneo y acabado satinado. Perfecta para looks modernos y casuales.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Satinado</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Moderna', 780000, 'lisa3.jpg', 'lisa3')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa3')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card" data-category="lisa" data-price="1100000">
+                    <div class="price-badge">$1,100,000</div>
+                    <img src="lisa4.jpg" alt="Pulsera Lisa 4" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Premium</h3>
+                        <p class="product-price">$1,100,000</p>
+                        <p class="product-description">Pulsera lisa premium con acabado espejo. La máxima expresión de elegancia y sofisticación.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Espejo</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                                </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Premium', 1100000, 'lisa4.jpg', 'lisa4')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa4')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card" data-category="lisa" data-price="950000">
+                    <div class="price-badge">$950,000</div>
+                    <img src="lisa5.jpg" alt="Pulsera Lisa 5" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Delicada</h3>
+                        <p class="product-price">$950,000</p>
+                        <p class="product-description">Pulsera lisa con diseño delicado y acabado suave. Ideal para looks femeninos y románticos.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Suave</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                                </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Delicada', 950000, 'lisa5.jpg', 'lisa5')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa5')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card" data-category="lisa" data-price="1200000">
+                    <div class="price-badge">$1,200,000</div>
+                    <img src="lisa6.jpg" alt="Pulsera Lisa 6" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pulsera Lisa Exclusiva</h3>
+                        <p class="product-price">$1,200,000</p>
+                        <p class="product-description">Pulsera lisa exclusiva con acabado personalizado. Una pieza única que refleja tu estilo personal.</p>
+                        <div class="product-features mb-3">
+                            <span class="badge bg-warning text-dark me-2">Oro 18K</span>
+                            <span class="badge bg-info text-dark me-2">Acabado Personalizado</span>
+                            <span class="badge bg-success text-dark">Garantía</span>
+                                </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light" onclick="addProductToCart('Pulsera Lisa Exclusiva', 1200000, 'lisa6.jpg', 'lisa6')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="showProductDetails('lisa6')">
+                                <i class="bi bi-eye"></i> Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div id="productModalContent">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3><i class="bi bi-cart3"></i> Tu Carrito</h3>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h4>Total: <span id="cartTotal">$0</span></h4>
+            </div>
+            <button class="btn btn-success w-100" onclick="checkout()">
+                <i class="bi bi-credit-card"></i> Proceder al Pago
+            </button>
+            <button class="btn btn-success w-100 mt-2" id="whatsapp-cart">
+                <i class="bi bi-whatsapp"></i> Enviar pedido por WhatsApp (texto)
+            </button>
+            <button class="btn btn-warning w-100 mt-2" id="pdf-cart">
+                <i class="bi bi-file-earmark-pdf"></i> Descargar pedido como PDF
+            </button>
+            <button class="btn btn-info w-100 mt-2" id="img-cart">
+                <i class="bi bi-image"></i> Descargar pedido como Imagen
+            </button>
+            <div class="mt-3 p-2 border rounded bg-light">
+                <strong>¿Cómo enviar tu pedido?</strong>
+                <ul class="mb-1">
+                    <li>Puedes enviar tu pedido como <b>texto</b> (botón verde), <b>PDF</b> (botón amarillo) o <b>imagen</b> (botón azul).</li>
+                    <li>Envía cualquiera de estos archivos al WhatsApp <b>+57 3024062449</b>.</li>
+                    <li>Si descargas PDF o imagen, abre WhatsApp y adjunta el archivo en el chat.</li>
+                </ul>
+                <span class="text-muted" style="font-size:0.95em">Este número es el canal oficial para pedidos K'latee.</span>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Sobre K'latee</h2>
+                    <p>Somos una joyería especializada en oro 18K, comprometida con la excelencia y la satisfacción del cliente. Cada pieza es creada con pasión y dedicación.</p>
+                    <ul class="socials">
+                        <li><a href="https://wa.me/573024062449" target="_blank"><i class="bi bi-whatsapp"></i></a></li>
+                        <li><a href="tel:+573024062449"><i class="bi bi-telephone"></i></a></li>
+                        <li><a href="https://www.instagram.com/kilateee_?igsh=MTkzOXRkd2tlMHgxZg==" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section links">
+                    <h2>Enlaces Rápidos</h2>
+                    <ul>
+                        <li><a href="lisas.html">Pulseras Lisas</a></li>
+                        <li><a href="diamantadas.html">Pulseras Diamantadas</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="index.html#categorias">Colecciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contacto</h2>
+                    <p><i class="bi bi-telephone"></i> Teléfono: <a href="tel:+573024062449">+57 3024062449</a></p>
+                    <p><i class="bi bi-envelope"></i> Email: sfontavovergara06@gmail.com <a href="mailto:"> </a>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 K'latee - Joyería de Oro 18K. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="carrito.js"></script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme');
+        
+        function toggleTheme() {
+            if (themeToggle.checked) {
+                document.body.classList.remove('light');
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+                document.body.classList.add('light');
+            }
+        }
+
+        themeToggle.addEventListener('change', toggleTheme);
+
+        if (localStorage.getItem('theme') === 'dark') {
+            themeToggle.checked = true;
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.add('light');
+        }
+
+        themeToggle.addEventListener('change', () => {
+            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+        });
+
+        // Product Details Modal
+        function showProductDetails(productId) {
+            const modal = document.getElementById('productModal');
+            const content = document.getElementById('productModalContent');
+            
+            // Product data (in a real app, this would come from a database)
+            const products = {
+                lisa1: {
+                    name: 'Pulsera Lisa Clásica',
+                    price: 850000,
+                    image: 'lisa1.jpg',
+                    description: 'Pulsera lisa de oro 18K con acabado brillante. Diseño atemporal y elegante perfecto para cualquier ocasión.',
+                    features: ['Oro 18K', 'Acabado Brillante', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Brillante',
+                        'Peso': '8.5g',
+                        'Medida': '18cm'
+                    }
+                },
+                lisa2: {
+                    name: 'Pulsera Lisa Elegante',
+                    price: 920000,
+                    image: 'lisa2.jpg',
+                    description: 'Pulsera lisa con diseño refinado y acabado mate. Ideal para looks sofisticados y elegantes.',
+                    features: ['Oro 18K', 'Acabado Mate', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Mate',
+                        'Peso': '9.2g',
+                        'Medida': '18cm'
+                    }
+                },
+                lisa3: {
+                    name: 'Pulsera Lisa Moderna',
+                    price: 780000,
+                    image: 'lisa3.jpg',
+                    description: 'Pulsera lisa con diseño contemporáneo y acabado satinado. Perfecta para looks modernos y casuales.',
+                    features: ['Oro 18K', 'Acabado Satinado', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Satinado',
+                        'Peso': '7.8g',
+                        'Medida': '18cm'
+                    }
+                },
+                lisa4: {
+                    name: 'Pulsera Lisa Premium',
+                    price: 1100000,
+                    image: 'lisa4.jpg',
+                    description: 'Pulsera lisa premium con acabado espejo. La máxima expresión de elegancia y sofisticación.',
+                    features: ['Oro 18K', 'Acabado Espejo', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Espejo',
+                        'Peso': '11g',
+                        'Medida': '18cm'
+                    }
+                },
+                lisa5: {
+                    name: 'Pulsera Lisa Delicada',
+                    price: 950000,
+                    image: 'lisa5.jpg',
+                    description: 'Pulsera lisa con diseño delicado y acabado suave. Ideal para looks femeninos y románticos.',
+                    features: ['Oro 18K', 'Acabado Suave', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Suave',
+                        'Peso': '9.5g',
+                        'Medida': '18cm'
+                    }
+                },
+                lisa6: {
+                    name: 'Pulsera Lisa Exclusiva',
+                    price: 1200000,
+                    image: 'lisa6.jpg',
+                    description: 'Pulsera lisa exclusiva con acabado personalizado. Una pieza única que refleja tu estilo personal.',
+                    features: ['Oro 18K', 'Acabado Personalizado', 'Garantía de por vida'],
+                    specifications: {
+                        'Material': 'Oro 18K',
+                        'Acabado': 'Personalizado',
+                        'Peso': '12g',
+                        'Medida': '18cm'
+                    }
+                }
+            };
+            
+            const product = products[productId];
+            if (product) {
+                content.innerHTML = `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="${product.image}" alt="${product.name}" class="img-fluid rounded" style="max-height: 400px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-6">
+                            <h3>${product.name}</h3>
+                            <h4 class="text-warning">$${product.price.toLocaleString()}</h4>
+                            <p>${product.description}</p>
+                            
+                            <div class="mb-3">
+                                <h5>Características:</h5>
+                                ${product.features.map(feature => `<span class="badge bg-warning text-dark me-2">${feature}</span>`).join('')}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h5>Especificaciones:</h5>
+                                <ul class="list-unstyled">
+                                    ${Object.entries(product.specifications).map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-light w-100" onclick="addProductToCart('${product.name}', ${product.price}, '${product.image}', '${productId}')">
+                                <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                `;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        // Clear filters
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sortSelect').value = '';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sortSelect').selectedIndex = 0;
+            document.getElementById('priceFilter').selectedIndex = 0;
+            if(document.getElementById('typeFilter')) document.getElementById('typeFilter').selectedIndex = 0;
+            // Si hay más filtros, reiniciarlos aquí
+            
+            // Show all products
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                product.style.display = 'block';
+            });
+        }
+
+        // Cart Modal
+        const cartModal = document.getElementById('cartModal');
+        const cartButton = document.getElementById('cart-button');
+        const closeBtn = document.querySelector('.close');
+
+        cartButton.onclick = function(e) {
+            e.preventDefault();
+            cartModal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            cartModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == cartModal) {
+                cartModal.style.display = "none";
+            }
+            if (event.target == document.getElementById('productModal')) {
+                document.getElementById('productModal').style.display = "none";
+            }
+        }
+
+        // Newsletter Form
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por suscribirte a nuestro newsletter!');
+            this.reset();
+        });
+
+        // Simple image loading fix
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.style.opacity = '1';
+                img.style.visibility = 'visible';
+                img.style.display = 'block';
+            });
+            
+            // Ensure text visibility
+            const texts = document.querySelectorAll('.titulo, .lead, .hero-buttons, .section-title, .section-subtitle, .card-title, .card-text, .product-title, .product-description');
+            texts.forEach(text => {
+                text.style.opacity = '1';
+                text.style.visibility = 'visible';
+            });
+        });
+
+        // Simple scroll fix
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.product-image, .card-img-top, img');
+            images.forEach(img => {
+                img.style.opacity = '1';
+                img.style.visibility = 'visible';
+                img.style.display = 'block';
+            });
+            
+            // Ensure text visibility during scroll
+            const texts = document.querySelectorAll('.titulo, .lead, .hero-buttons, .section-title, .section-subtitle, .card-title, .card-text, .product-title, .product-description');
+            texts.forEach(text => {
+                text.style.opacity = '1';
+                text.style.visibility = 'visible';
+            });
+        });
+
+        // Force image visibility on page load
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.style.opacity = '1';
+                img.style.visibility = 'visible';
+                img.style.display = 'block';
+            });
+        });
+
+        // Continuous image visibility check
+        setInterval(function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.style.opacity !== '1' || img.style.visibility !== 'visible' || img.style.display !== 'block') {
+                    img.style.opacity = '1';
+                    img.style.visibility = 'visible';
+                    img.style.display = 'block';
+                }
+            });
+        }, 100);
+
+        // WhatsApp Cart Button (Texto)
+        document.getElementById('whatsapp-cart').onclick = function() {
+            let items = [];
+            document.querySelectorAll('#cartItems .cart-item').forEach(item => {
+                let name = item.querySelector('.cart-item-name')?.textContent || item.textContent;
+                let price = item.querySelector('.cart-item-price')?.textContent || '';
+                items.push(`- ${name} ${price}`.trim());
+            });
+            let total = document.getElementById('cartTotal').textContent;
+            let mensaje = `Hola, quiero pedir:\n${items.join('\n')}\nTotal: ${total}`;
+            let url = "https://wa.me/573024062449?text=" + encodeURIComponent(mensaje);
+            window.open(url, "_blank");
+        }
+
+        // PDF Cart Button
+        if(document.getElementById('pdf-cart')) {
+            document.getElementById('pdf-cart').onclick = function() {
+                const doc = new window.jspdf.jsPDF();
+                // Encabezado dorado y marca
+                doc.setFillColor(212, 175, 55); // dorado
+                doc.rect(0, 0, 210, 25, 'F');
+                doc.setTextColor(255, 255, 255);
+                doc.setFontSize(22);
+                doc.text("K'latee Joyería", 12, 18);
+                // Logo de la marca
+                fetch('marquita.png').then(r => r.blob()).then(blob => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        doc.addImage(reader.result, 'PNG', 170, 2, 30, 20);
+                        generarFacturaPDF(doc);
+                    };
+                    reader.readAsDataURL(blob);
+                }).catch(() => {
+                    generarFacturaPDF(doc);
+                });
+                function generarFacturaPDF(doc) {
+                    doc.setTextColor(212, 175, 55);
+                    doc.setFontSize(14);
+                    doc.text('Pedido de Oro 18K', 12, 32);
+                    doc.setTextColor(0,0,0);
+                    doc.setFontSize(12);
+                    doc.text('WhatsApp: +57 3024062449', 12, 40);
+                    doc.setDrawColor(212, 175, 55);
+                    doc.line(12, 44, 190, 44);
+                    // Listado de productos en el carrito
+                    let items = [];
+                    let suma = 0;
+                    let prodY = 55;
+                    doc.setFontSize(15);
+                    doc.setTextColor(0,0,0);
+                    doc.text('Productos en el pedido:', 12, prodY);
+                    prodY += 8;
+                    document.querySelectorAll('#cartItems .cart-item').forEach((item, idx) => {
+                        let name = item.querySelector('.cart-item-name')?.textContent || item.textContent;
+                        let price = item.querySelector('.cart-item-price')?.textContent || '';
+                        let img = item.querySelector('img');
+                        let imgSrc = img ? img.src : null;
+                        items.push({name, price, imgSrc});
+                        let num = parseInt(price.replace(/[^\d]/g, ''));
+                        if(!isNaN(num)) suma += num;
+                    });
+                    // Renderizar imágenes y productos
+                    function renderProductos(i) {
+                        if(i >= items.length) {
+                            // Suma de productos
+                            doc.setFontSize(13);
+                            doc.setTextColor(0,0,0);
+                            doc.text('Suma de productos:', 12, prodY);
+                            doc.setTextColor(212, 175, 55);
+                            doc.text(`$${suma.toLocaleString()}`, 65, prodY);
+                            // Total del pedido
+                            let total = document.getElementById('cartTotal').textContent;
+                            let totalY = prodY + 12;
+                            doc.setFontSize(15);
+                            doc.setTextColor(0,0,0);
+                            doc.text('Total del pedido:', 12, totalY);
+                            doc.setTextColor(212, 175, 55);
+                            doc.text(total, 65, totalY);
+                            doc.setDrawColor(212, 175, 55);
+                            doc.line(12, totalY + 5, 190, totalY + 5);
+                            doc.setFontSize(10);
+                            doc.setTextColor(100,100,100);
+                            doc.text('Envío gratis en Colombia • Oro certificado • Garantía de calidad', 12, totalY + 15);
+                            doc.save('pedido-klatee.pdf');
+                            alert('PDF descargado con todos los productos y total. Ahora puedes enviarlo por WhatsApp al +57 3024062449.');
+                            return;
+                        }
+                        let item = items[i];
+                        if(item.imgSrc) {
+                            // Cargar la imagen y agregarla al PDF
+                            let img = new Image();
+                            img.crossOrigin = "anonymous";
+                            img.onload = function() {
+                                let canvas = document.createElement('canvas');
+                                canvas.width = img.width;
+                                canvas.height = img.height;
+                                let ctx = canvas.getContext('2d');
+                                ctx.drawImage(img, 0, 0);
+                                let imgData = canvas.toDataURL('image/jpeg', 1.0);
+                                doc.addImage(imgData, 'JPEG', 12, prodY, 30, 30);
+                                doc.setFontSize(13);
+                                doc.setTextColor(212, 175, 55);
+                                doc.text(item.name, 45, prodY + 10);
+                                doc.setTextColor(0,0,0);
+                                doc.text('Precio:', 45, prodY + 20);
+                                doc.setTextColor(212, 175, 55);
+                                doc.text(item.price, 65, prodY + 20);
+                                prodY += 38;
+                                renderProductos(i+1);
+                            };
+                            img.onerror = function() {
+                                // Si falla la imagen, mostrar solo texto
+                                doc.setFontSize(13);
+                                doc.setTextColor(212, 175, 55);
+                                doc.text(item.name, 45, prodY + 10);
+                                doc.setTextColor(0,0,0);
+                                doc.text('Precio:', 45, prodY + 20);
+                                doc.setTextColor(212, 175, 55);
+                                doc.text(item.price, 65, prodY + 20);
+                                prodY += 38;
+                                renderProductos(i+1);
+                            };
+                            img.src = item.imgSrc;
+                        } else {
+                            // Si no hay imagen, mostrar solo texto
+                            doc.setFontSize(13);
+                            doc.setTextColor(212, 175, 55);
+                            doc.text(item.name, 45, prodY + 10);
+                            doc.setTextColor(0,0,0);
+                            doc.text('Precio:', 45, prodY + 20);
+                            doc.setTextColor(212, 175, 55);
+                            doc.text(item.price, 65, prodY + 20);
+                            prodY += 38;
+                            renderProductos(i+1);
+                        }
+                    }
+                    renderProductos(0);
+                }
+            }
+        }
+
+        // Imagen Cart Button
+        if(document.getElementById('img-cart')) {
+            document.getElementById('img-cart').onclick = function() {
+                html2canvas(document.getElementById('cartItems')).then(canvas => {
+                    let link = document.createElement('a');
+                    link.download = 'pedido-klatee.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                    alert('Imagen descargada. Ahora puedes enviarla por WhatsApp al +57 3024062449.');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
